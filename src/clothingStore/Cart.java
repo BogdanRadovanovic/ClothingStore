@@ -19,7 +19,7 @@ public class Cart {
             products.add(p);
         }
         else{
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid product can't be added to cart.");
         }
     }
     
@@ -28,11 +28,12 @@ public class Cart {
             products.remove(p);
         }
         else{
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid product reference can't be used for removing product from cart.");
         }
     }
 
     public Product getProduct(int index) {
+        if(index < 0) throw new IllegalArgumentException("Index of product in cart can't be negative.");
         return products.get(index);
     }
     

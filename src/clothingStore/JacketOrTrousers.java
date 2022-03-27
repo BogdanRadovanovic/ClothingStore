@@ -29,6 +29,6 @@ public abstract class JacketOrTrousers extends Product {
 
     public JacketOrTrousers(int size, String name, String brand, double price, String color) {
         super(name, brand, price, color);
-        this.size = size;
+        this.setSize(size);
     }
 }

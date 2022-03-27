@@ -27,7 +27,7 @@ public class Price {
     }
 
     public Price(double amount) {
-        this.amount = amount;
+        this.setAmount(amount);
     }
     
     public int getDiscount() {

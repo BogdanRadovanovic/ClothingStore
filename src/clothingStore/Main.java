@@ -17,6 +17,16 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+    static void ExampleBase(Cart cart, String dateString){
+        DateTimeFormatter formatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime dateOfPurchase = LocalDateTime.parse(dateString, formatObj);
+        
+        Purchase purchase = new Purchase(cart, dateOfPurchase);
+        
+        Cashier cashier = new Cashier();
+        cashier.printReceipt(purchase);
+    }
+    
     static void Example1() {
         Cart cart = new Cart();
         cart.addProduct(new Shirt("M", "Blue Cotton Shirt", "BrandS", 14.99, "blue"));
@@ -25,12 +35,7 @@ public class Main {
         cart.addProduct(new Shoes(43, "Black Leather Shoes", "BrandS", 59.99, "black"));
         cart.addProduct(new Jacket(50, "Black Cotton Suit Jacket", "BrandJ", 99.99, "black"));
         
-        DateTimeFormatter formatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime dateOfPurchase = LocalDateTime.parse("2022-02-02 12:34:56", formatObj);
-        Purchase purchase = new Purchase(cart, dateOfPurchase);
-        
-        Cashier cashier = new Cashier();
-        cashier.printReceipt(purchase);
+        ExampleBase(cart, "2022-02-02 12:34:56");
     }
     
     static void Example2() {
@@ -38,12 +43,7 @@ public class Main {
         cart.addProduct(new Shirt("L", "Black Silk Shirt", "BrandS", 29.99, "black"));
         cart.addProduct(new Shirt("L", "White Silk Shirt", "BrandS", 29.99, "white"));
         
-        DateTimeFormatter formatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime dateOfPurchase = LocalDateTime.parse("2022-02-01 12:34:56", formatObj);
-        Purchase purchase = new Purchase(cart, dateOfPurchase);
-        
-        Cashier cashier = new Cashier();
-        cashier.printReceipt(purchase);
+        ExampleBase(cart, "2022-02-01 12:34:56");
     }
     
     static void Example3() {
@@ -54,12 +54,7 @@ public class Main {
         cart.addProduct(new Jacket(56, "Red Linen Suit Jacket", "BrandJ", 99.99, "red"));
         cart.addProduct(new Shirt("L", "White Linen Shirt", "BrandS", 29.99, "white"));
         
-        DateTimeFormatter formatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime dateOfPurchase = LocalDateTime.parse("2022-02-01 12:34:56", formatObj);
-        Purchase purchase = new Purchase(cart, dateOfPurchase);
-        
-        Cashier cashier = new Cashier();
-        cashier.printReceipt(purchase);
+        ExampleBase(cart, "2022-02-01 12:34:56");
     }
     
     public static void main(String[] args) {

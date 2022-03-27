@@ -20,8 +20,8 @@ public class Purchase {
     private final double totalDiscount;
 
     public Purchase(Cart cart, LocalDateTime dateOfCreation) {
-        if(cart == null) { throw new IllegalArgumentException(); }
-        if(dateOfCreation == null) { throw new IllegalArgumentException(); }
+        if(cart == null) { throw new IllegalArgumentException("No shopping cart provided to create purchase."); }
+        if(dateOfCreation == null) { throw new IllegalArgumentException("Invalid date of purchase entered."); }
         
         this.dateOfCreation = dateOfCreation;
         
